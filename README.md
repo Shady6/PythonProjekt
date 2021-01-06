@@ -1,5 +1,5 @@
 # PythonProjekt
 
-#CHOPIE
+# CHOPIE
 to jest projekt
-#CHOPIE
+# CHOPIE
