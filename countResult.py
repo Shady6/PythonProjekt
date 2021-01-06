@@ -1,3 +1,5 @@
+from length import *
+
 _metricValue = ""
 _imperialValue = ""
 _isMetricToImperial = True
@@ -13,14 +15,18 @@ def CalculateConversion(metricValue, imperialValue, isMetricToImperial, valueTex
         result = YardsToImperialDestination(yards)
     else:
         meters = ImperialToMeters()
-        result = MetersToMetricDestination(yards)
+        result = MetersToMetricDestination(meters)
 
     print(result)
 
 def SaveValues(metricValue, imperialValue, isMetricToImperial, valueText):
+    global _metricValue
     _metricValue = metricValue
-    imperialValue = _imperialValue
+    global _imperialValue
+    _imperialValue = imperialValue
+    global _isMetricToImperial
     _isMetricToImperial = isMetricToImperial
+    global valueToConvert
     valueToConvert = float(valueText) # convert this shit to numerical        
 
 def MetricToYards():
@@ -28,7 +34,7 @@ def MetricToYards():
 
     if _metricValue == "milimetr":
         meters = mm_to_m(valueToConvert)
-    elif _metricValue == "centrymetr":
+    elif _metricValue == "centymetr":
         meters = cm_to_m(valueToConvert)    
     elif _metricValue == "kilometr":
         meters = km_to_m(valueToConvert) 

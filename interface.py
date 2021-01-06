@@ -36,7 +36,7 @@ valueText = StringVar()
 valueTextBox = Entry(textvariable=valueText)
 valueTextBox.pack()
 
-calculateButton = Button(window, text="Oblicz", command=lambda: CalculateConversion(metricValue.get(), imperialValue.get(), getIsMetricToImperial(conversionDirection), valueText.get()))
+calculateButton = Button(window, text="Oblicz", command=lambda: CalculateConversion(metricValue.get(), imperialValue.get(), isMetric(conversionDirection), valueText.get()))
 calculateButton.pack()
 
 resultLabel = Label(text="Wynik")
