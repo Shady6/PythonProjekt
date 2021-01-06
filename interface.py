@@ -11,7 +11,7 @@ metricLabel = Label(text="Wybierz jednostkę metryczną")
 metricLabel.pack()
 
 metricValue = StringVar(window)
-metricValue.set("metry")
+metricValue.set("metr")
 metricDropDown = OptionMenu(window, metricValue, "milimetr", "centymetr", "metr", "kilometr")
 metricDropDown.pack()
 
@@ -19,7 +19,7 @@ imperialLabel = Label(text="Wybierz jednostkę imperialną")
 imperialLabel.pack()
 
 imperialValue = StringVar(window)
-imperialValue.set("mile")
+imperialValue.set("mila")
 ImperialDropDown = OptionMenu(window, imperialValue, "cal", "stopa", "jard", "pręt", "łańcuch", "furlong", "mila")
 ImperialDropDown.pack()
 
@@ -36,14 +36,14 @@ valueText = StringVar()
 valueTextBox = Entry(textvariable=valueText)
 valueTextBox.pack()
 
-calculateButton = Button(window, text="Oblicz", command=lambda: CalculateConversion(metricValue.get(), imperialValue.get(), isMetric(conversionDirection), valueText.get()))
+calculateButton = Button(window, text="Oblicz", command=lambda: CalculateConversion(metricValue.get(), imperialValue.get(), isMetric(conversionDirection), valueText.get(), resultValueLabel))
 calculateButton.pack()
 
 resultLabel = Label(text="Wynik")
 resultLabel.pack()
 
-resultValue = Label(text="")
-resultValue.pack()
+resultValueLabel = Label(text="")
+resultValueLabel.pack()
 
 window.mainloop()
 

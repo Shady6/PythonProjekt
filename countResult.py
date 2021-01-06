@@ -6,7 +6,7 @@ _isMetricToImperial = True
 valueToConvert = 0
 
 
-def CalculateConversion(metricValue, imperialValue, isMetricToImperial, valueText):
+def CalculateConversion(metricValue, imperialValue, isMetricToImperial, valueText, resultValueLabel):
     SaveValues(metricValue, imperialValue, isMetricToImperial, valueText)
 
     result = 0
@@ -17,7 +17,7 @@ def CalculateConversion(metricValue, imperialValue, isMetricToImperial, valueTex
         meters = ImperialToMeters()
         result = MetersToMetricDestination(meters)
 
-    print(result)
+    resultValueLabel['text'] = str(result)
 
 def SaveValues(metricValue, imperialValue, isMetricToImperial, valueText):
     global _metricValue
@@ -74,18 +74,18 @@ def ImperialToMeters():
     elif _imperialValue == "mila":
         yards = mi_to_yd(valueToConvert)        
 
-    result = yd_to_m(meters)
+    result = yd_to_m(yards)
     return result
 
 def MetersToMetricDestination(meters):
-    result = valueToConvert
+    result = meters
 
     if _metricValue == "milimetr":
-        meters = m_to_mm(meters)
-    elif _metricValue == "centrymetr":
-        meters = m_to_cm(meters)    
+        result = m_to_mm(meters)
+    elif _metricValue == "centymetr":
+        result = m_to_cm(meters)    
     elif _metricValue == "kilometr":
-        meters = m_to_km(meters) 
+        result = m_to_km(meters) 
     
     return result
 
