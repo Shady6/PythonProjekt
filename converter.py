@@ -9,9 +9,22 @@ class Converter(metaclass=ABCMeta):
     # A -> B
 
     def ConvertAndFillResultLabel(self, isAToB, unitAName, unitBName, value, resultValueLabel):
-        value = float(value)
-        result = self.Convert(isAToB, unitAName, unitBName, value)
+        
+        value = self.TryConvertToFloat(value)
+        if value is False:
+            result = "Wprowadzono niepoprawną wartość"
+        elif value < 0:
+            result = "Wartość nie może być ujemna"        
+        else:            
+            result = round(self.Convert(isAToB, unitAName, unitBName, value), 2)
         resultValueLabel["text"] = str(result)
+    
+    def TryConvertToFloat(self, value):
+        try:     
+            value = value.replace(",", ".")
+            return float(value)
+        except:
+            return False
 
     def Convert(self, isAToB, unitAName, unitBName, value):
         if isAToB:
