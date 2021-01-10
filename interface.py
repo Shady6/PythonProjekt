@@ -1,5 +1,5 @@
 from tkinter import *
-from conversionDirection import changeConversionDirectionText, isMetric
+from conversion_direction import changeConversionDirectionText, isMetric
 from volume_converter import VolumeConverter
 
 
