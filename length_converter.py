@@ -1,6 +1,6 @@
 ####################################
-def km_to_m(x):
-    return x * 1000
+def mm_to_m(x):
+    return x / 1000
 
 
 def cm_to_m(x):
@@ -11,31 +11,30 @@ def dm_to_m(x):
     return x / 10
 
 
-def mm_to_m(x):
-    return x / 1000
-
-
-def m_to_yd(x):
-    return x * 1.0936132983377078
-
-
-def m_to_km(x):
-    return x / 1000
-
-
-def m_to_dm(x):
-    return x / 10
-
-
-def m_to_cm(x):
-    return x * 100
+def km_to_m(x):
+    return x * 1000
 
 
 def m_to_mm(x):
     return x * 1000
 
 
-#####################################
+ def m_to_cm(x):
+    return x * 100  
+
+
+def m_to_dm(x):
+    return x / 10
+
+
+def m_to_km(x):
+    return x / 1000
+
+
+def m_to_yd(x):
+    return x * 1.0936132983377078
+
+####################################
 
 
 def mi_to_yd(x):
