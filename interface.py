@@ -5,6 +5,8 @@ from volume_converter import VolumeConverter
 
 def AddConversionPanel(window, unitName, converter):
 
+    window.title("Konwerter jednostek")
+
     frame = Frame(window)        
     frame.pack(side="left", expand=True)
 
