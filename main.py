@@ -6,6 +6,7 @@ from interface import AddConversionPanel
 
 window = Tk()
 window.geometry("600x400")
+window.title("Konwerter jednostek")
 
 # pozmieniać convertery
 AddConversionPanel(window, "Długości", VolumeConverter())
